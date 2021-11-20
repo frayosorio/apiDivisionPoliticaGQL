@@ -17,7 +17,7 @@ type Query{
 }
 
 type Mutation{
-    agregar(
+    agregarPais(
         id: Int!
         nombre: String!
         continente: String!

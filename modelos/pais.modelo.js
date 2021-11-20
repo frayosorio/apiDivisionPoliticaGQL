@@ -1,6 +1,8 @@
 const mongo = require("mongoose");
 const Esquema = mongo.Schema;
 
+const regionEsquema =require('./region.modelo')
+
 const paisEsquema = new Esquema(
     {
         id: {
@@ -27,9 +29,12 @@ const paisEsquema = new Esquema(
             type: String,
             required: true
         },
+        regiones: [
+            regionEsquema
+        ]
     }
 );
 
 const Pais = mongo.model('paises', paisEsquema);
 
-module.export = Pais;
+module.exports = Pais;
