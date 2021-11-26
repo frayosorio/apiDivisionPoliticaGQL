@@ -1,4 +1,6 @@
+const ciudadEsquema = require("./ciudad.modelo");
 const mongo = require("mongoose");
+
 const Esquema = mongo.Schema;
 
 const regionEsquema = new Esquema(
@@ -15,6 +17,9 @@ const regionEsquema = new Esquema(
             type: Number,
             required: false
         },
+        ciudades:[
+            ciudadEsquema
+        ]
     }
 );
 

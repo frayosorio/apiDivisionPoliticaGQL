@@ -12,6 +12,7 @@ bd.conectar();
 //importar esquemas
 const esquemaPais = require('./graphQL/pais.esquema');
 const esquemaRegion = require('./graphQL/region.esquema');
+const esquemaCiudad = require('./graphQL/ciudad.esquema');
 
 //Definir ruta e iniciar GraphQL
 app.use('/gqlpais', graphqlHTTP(
@@ -24,6 +25,13 @@ app.use('/gqlpais', graphqlHTTP(
 app.use('/gqlregion', graphqlHTTP(
     {
         schema: esquemaRegion,
+        graphiql: true
+    }
+));
+
+app.use('/gqlciudad', graphqlHTTP(
+    {
+        schema: esquemaCiudad,
         graphiql: true
     }
 ));
