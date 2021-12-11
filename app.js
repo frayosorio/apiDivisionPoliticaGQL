@@ -14,6 +14,10 @@ const esquemaPais = require('./graphQL/pais.esquema');
 const esquemaRegion = require('./graphQL/region.esquema');
 const esquemaCiudad = require('./graphQL/ciudad.esquema');
 
+//habilitar CORS
+const cors = require('cors');
+app.use(cors);
+
 //Definir ruta e iniciar GraphQL
 app.use('/gqlpais', graphqlHTTP(
     {
